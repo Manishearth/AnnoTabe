@@ -9,7 +9,7 @@ function loadStuff(){
 function setStuff(){
   var tabobj={};
   tabobj['tab-'+tabid]=document.getElementById('annotext').value
-     chrome.storage.sync.set(tabobj, function() {});
+     chrome.storage.sync.set(tabobj, function() {window.close()});
 
 }
 function getStuff(){
