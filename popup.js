@@ -8,13 +8,13 @@ function loadStuff(){
 }
 function setStuff(){
   var tabobj={};
-  tabobj['tab-'+tabid]=document.getElementById('abc').value
+  tabobj['tab-'+tabid]=document.getElementById('annotext').value
      chrome.storage.sync.set(tabobj, function() {});
 
 }
 function getStuff(){
-  chrome.storage.sync.get(['tab-'+tabid], function(items) {  if(items['tab-'+tabid]){document.getElementById('abc').value=items['tab-'+tabid]}});
+  chrome.storage.sync.get(['tab-'+tabid], function(items) {  if(items['tab-'+tabid]){document.getElementById('annotext').value=items['tab-'+tabid]}});
 }
 
-document.getElementById('update').onclick=setStuff;
+document.getElementById('updatebutton').onclick=setStuff;
 loadStuff()
