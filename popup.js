@@ -17,4 +17,5 @@ function getStuff(){
 }
 
 document.getElementById('updatebutton').onclick=setStuff;
+document.getElementById('dismissbutton').onclick=function(){chrome.storage.sync.remove(['tab-'+tabid],function(){window.close()})};
 loadStuff()
