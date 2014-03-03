@@ -39,8 +39,8 @@ function getStuff(){
     });
 }
 
-document.getElementById('updatebutton').onclick=setStuff(function(){window.close});
-document.getElementById('annotext').onblur=setStuff(function(){});
+document.getElementById('updatebutton').onclick=setStuffLambda(function(){window.close});
+document.getElementById('annotext').onblur=setStuffLambda(function(){});
 document.getElementById('dismissbutton').onclick=function(){chrome.storage.sync.remove(['tab-'+tabid,'url-'+tabURL],function(){window.close()})};
 document.getElementById('showallbutton').onclick=function(){  chrome.tabs.create({
     url: "list.html",
