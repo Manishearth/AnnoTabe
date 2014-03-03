@@ -3,7 +3,7 @@
 
   "name": "AnnoTabe",
   "description": "Lets users annotate windows",
-  "version": "1.2",
+  "version": "1.2.1",
 
   "permissions": [
     "tabs",

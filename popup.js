@@ -13,7 +13,8 @@ function loadStuff(){
     }
     })
 }
-function setStuff(){
+function setStuffLambda(callback){
+  return function(){
   var tabobj={};
   if(persist){
    tabobj['url-'+tabURL]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value}
@@ -21,7 +22,8 @@ function setStuff(){
    tabobj['tab-'+tabid]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value}
   }
 
-  chrome.storage.sync.set(tabobj, function() {window.close()});    
+  chrome.storage.sync.set(tabobj, callback);    
+}
 }
 function getStuff(){
   chrome.storage.sync.get(['tab-'+tabid,'url-'+tabURL], function(items) {
@@ -37,8 +39,8 @@ function getStuff(){
     });
 }
 
-document.getElementById('updatebutton').onclick=setStuff;
-document.getElementById('annotext').onblur=setStuff;
+document.getElementById('updatebutton').onclick=setStuff(function(){window.close});
+document.getElementById('annotext').onblur=setStuff(function(){});
 document.getElementById('dismissbutton').onclick=function(){chrome.storage.sync.remove(['tab-'+tabid,'url-'+tabURL],function(){window.close()})};
 document.getElementById('showallbutton').onclick=function(){  chrome.tabs.create({
     url: "list.html",
