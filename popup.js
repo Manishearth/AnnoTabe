@@ -39,7 +39,7 @@ function getStuff(){
     });
 }
 
-document.getElementById('updatebutton').onclick=setStuffLambda(function(){window.close});
+document.getElementById('updatebutton').onclick=setStuffLambda(function(){window.close()});
 document.getElementById('annotext').onblur=setStuffLambda(function(){});
 document.getElementById('dismissbutton').onclick=function(){chrome.storage.sync.remove(['tab-'+tabid,'url-'+tabURL],function(){window.close()})};
 document.getElementById('showallbutton').onclick=function(){  chrome.tabs.create({
