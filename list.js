@@ -1,7 +1,11 @@
 
 function addTr(key,value){
   var tr=document.createElement('tr');
-  tr.innerHTML="<td><a href='"+value.URL+"'>"+value.title+"</a></td><td width='500px'>"+value.value+"</td><td><button data-key="+key+" class=dismiss>Dismiss</button></td><td><button data-key="+key+" class=goto>Goto tab</button></td>"
+  tabtitle=value.title;
+  if(tabtitle!=tabtitle.substr(0,30)){
+    tabtitle=tabtitle.substr(0,30)+"..."
+  }
+  tr.innerHTML="<td><a href='"+value.URL+"'>"+tabtitle+"</a></td><td width='500px'>"+value.value+"</td><td><button data-key="+key+" class=dismiss>Dismiss</button></td><td><button data-key="+key+" class=goto>Goto tab</button></td>"
   tr.getElementsByClassName('goto')[0].onclick=gotoTab;
   tr.getElementsByClassName('dismiss')[0].onclick=dismiss;
   document.getElementById('maintable').appendChild(tr)
@@ -28,6 +32,10 @@ function gotoTab(){
 }
 function dismiss(){
   key=this.getAttribute('data-key');
-  chrome.storage.sync.remove([key],function(){chrome.storage.sync.get(null,function(data){keys=data;updateTable()})})
+  chrome.storage.sync.remove([key],function(){})
 }
-chrome.storage.sync.get(null,function(data){keys=data;updateTable()})
+function update(){
+  chrome.storage.sync.get(null,function(data){keys=data;updateTable()})
+}
+chrome.storage.onChanged.addListener(update)
+update();
