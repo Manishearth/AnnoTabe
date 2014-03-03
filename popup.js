@@ -3,17 +3,22 @@ var tabURL;
 var persist=true;
 function loadStuff(){
   chrome.tabs.query({active:true,currentWindow:true},function(tab){
+    if(tab[0]){
     tabid=tab[0].id;
     tabURL=tab[0].url//.split("#")[0];
+    tabTitle=tab[0].title;
     getStuff();
+    }else{
+      document.body.innerHTML="No tab to annotate"
+    }
     })
 }
 function setStuff(){
   var tabobj={};
   if(persist){
-   tabobj['url-'+tabURL]={URL:tabURL,value:document.getElementById('annotext').value}
+   tabobj['url-'+tabURL]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value}
   }else{
-   tabobj['tab-'+tabid]={URL:tabURL,value:document.getElementById('annotext').value}
+   tabobj['tab-'+tabid]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value}
   }
 
   chrome.storage.sync.set(tabobj, function() {window.close()});    
