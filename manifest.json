@@ -18,5 +18,6 @@
   },
   "icons": { "16": "icontildalactive16.png",
            "48": "icontildalactive48.png",
-          "128": "icontildalactive128.png" }
+          "128": "icontildalactive128.png" },
+  "incognito" : "spanning"
 }
