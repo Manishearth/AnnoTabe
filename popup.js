@@ -15,6 +15,9 @@ function loadStuff(){
 }
 function setStuffLambda(callback){
   return function(){
+    if(document.getElementById('annotext').value.trim()==""){
+      return;
+    }
   var tabobj={};
   if(persist){
    tabobj['url-'+tabURL]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value}
