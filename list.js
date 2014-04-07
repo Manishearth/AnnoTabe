@@ -2,8 +2,8 @@
 function addTr(key,value){
   var tr=document.createElement('tr');
   tabtitle=value.title;
-  if(tabtitle!=tabtitle.substr(0,30)){
-    tabtitle=tabtitle.substr(0,30)+"..."
+  if(tabtitle!=tabtitle.substr(0,50)){
+    tabtitle=tabtitle.substr(0,50)+"..."
   }
   tr.innerHTML="<td><a href='"+value.URL+"'>"+tabtitle+"</a></td><td width='500px'>"+value.value+"</td><td><button data-key="+key+" class=dismiss>Dismiss</button></td><td><button data-key="+key+" class=goto>Goto tab</button></td>"
   tr.getElementsByClassName('goto')[0].onclick=gotoTab;
