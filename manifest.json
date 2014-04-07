@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "AnnoTabe",
-  "description": "Lets users annotate windows",
+  "description": "Leave annotations on tabs that you want to get back to later",
   "version": "1.2.3",
 
   "permissions": [
