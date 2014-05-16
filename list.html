@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head><title>Annotated tabs</title>
-<style>
-th,tr{padding-left:30px;padding-right:30px;text-align:center;word-wrap:break-word;padding-top:20px}
-/*table {border-collapse:collapse; table-layout:fixed; width:1000px;}*/
-</style>
+<head>
+	<title>Annotated tabs</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<style>
+		th,tr{padding-left:30px;padding-right:30px;text-align:center;word-wrap:break-word;padding-top:20px}
+		table{border-collapse:collapse;}
+		#Annotation{position:relative;right:69px;}
+	</style>
 </head>
-<body>
 
-<table align=center>
-<thead><tr>
-<th>Page</th>
-<th>Annotation</th>
-<th></th><th></th>
-</tr></thead>
-<tbody id=maintable></tbody>
-</table>
-<script src="list.js"></script>
+<body>
+	<img src="icontildal.png" width="75px" height="75px" style="vertical-align:middle;">
+	&nbsp;
+	<h1 style="display:inline-block;"><em>AnnoTabes</em></h1>
+	<table align="center" class="table table-striped">
+		<thead>
+			<tr>
+				<th>Page</th>
+				<th id="Annotation">Annotation</th>
+			</tr>
+		</thead>
+		<tbody id=maintable></tbody>
+	</table>
+	<script src="list.js"></script>
 </body>
 </html>
