@@ -5,7 +5,7 @@ function addTr(key,value){
   if(tabtitle!=tabtitle.substr(0,50)){
     tabtitle=tabtitle.substr(0,50)+"..."
   }
-  tr.innerHTML="<td style='width:45%'><a href='"+value.URL+"'>"+tabtitle+"</a></td><td style='width:55%'>"+value.value+"<button style='float:right;' data-key="+key+" class='dismiss btn btn-sm btn-primary'>Dismiss</button><button style='float:right;' data-key="+key+" class='goto btn btn-sm btn-primary' >Goto tab</button></td>"
+  tr.innerHTML="<td style='width:35%'><a href='"+value.URL+"'>"+tabtitle+"</a></td><td style='width:50%'>"+value.value+"</td><td style='width:15%'><button style='float:right;' data-key="+key+" class='dismiss btn btn-sm btn-primary'>Dismiss</button><button style='float:right;' data-key="+key+" class='goto btn btn-sm btn-primary' >Goto tab</button></td>"
   tr.getElementsByClassName('goto')[0].onclick=gotoTab;
   tr.getElementsByClassName('dismiss')[0].onclick=dismiss;
   document.getElementById('maintable').appendChild(tr)
