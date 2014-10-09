@@ -2,6 +2,9 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<script>
+		window.addEventListener('load', loadHandler)
+	</script>
 </head>
 
 <body style="background-color:#F2ECE5">
@@ -13,7 +16,7 @@
 		</tr>
 		<tr>
 			<td style="width:50%"><button style="width:100%" id="showallbutton" class="btn btn-info" >Show all annotations</button></td>
-			<td style="width:50%"><label class="btn btn-primary" for="persist" title="Associate the annotation with the URL, not this particular tab" style="width:145px">Persist<input checked type="checkbox" id="persist" style="vertical-align:bottom" name="persist"/ ></label></td>
+			<td style="width:50%"><button id="persist-button" class="btn btn-primary" title="Associate the annotation with the URL, not this particular tab" style="width:100%">Persist<input checked type="checkbox" id="persist" style="vertical-align:bottom" name="persist"/ ></button></td>
 		</tr>
 	</table>
 	<script src="popup.js"></script>
