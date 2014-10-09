@@ -53,7 +53,7 @@ document.getElementById('showallbutton').onclick=function(){  chrome.tabs.create
   }, null);};
 
 document.getElementById('persist').onclick=function(){persist=!persist;event.stopPropagation();}
-document.getElementById('persist-button').onclick=function(){document.getElementById('persist').checked = !document.getElementById('persist').checked}
+document.getElementById('persist-button').onclick=function(){persist=!persist;document.getElementById('persist').checked = !document.getElementById('persist').checked}
 loadStuff()
 
 //Debug: chrome.storage.sync.get(null,function(item){console.log(item)})
