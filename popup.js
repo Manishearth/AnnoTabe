@@ -52,7 +52,7 @@ document.getElementById('showallbutton').onclick=function(){  chrome.tabs.create
     active: true
   }, null);};
 
-document.getElementById('persist').onclick=function(){persist=!persist}
+document.getElementById('persist').onclick=function(){persist=!persist;event.stopPropagation();}
 document.getElementById('persist-button').onclick=function(){document.getElementById('persist').checked = !document.getElementById('persist').checked}
 loadStuff()
 
