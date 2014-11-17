@@ -6,11 +6,16 @@
 
 <body style="background-color:#F2ECE5">
 	<textarea class="form-control" placeholder="Add a description (Optional)" id="annotext" style="width: 320px; height: 125px;" autofocus></textarea>
-	<button id="updatebutton" class="btn btn-success" style="width: 171px;">Update!</button>
-	<button id="dismissbutton" class="btn btn-warning " style="width: 171px;">Dismiss</button>
-	<br>
-	<button id="showallbutton" class="btn btn-info " style="width: 171px; float: right;">Show all annotations</button>
-	<label style="margin-top: 2px; width: 145px;" class="btn btn-primary" for="persist" title="Associate the annotation with the URL, not this particular tab">Persist<input checked type="checkbox" id="persist" style="vertical-align:bottom" name="persist"/ ></label>
+	<table style="table-layout:fixed;margin-bottom:0px">
+		<tr>
+			<td style="width:50%"><button style="width:100%" id="updatebutton" class="btn btn-success">Update!</button></td>
+			<td style="width:50%"><button style="width:100%" id="dismissbutton" class="btn btn-warning">Dismiss</button></td>
+		</tr>
+		<tr>
+			<td style="width:50%"><button style="width:100%" id="showallbutton" class="btn btn-info" >Show all annotations</button></td>
+			<td style="width:50%"><button id="persist-button" class="btn btn-primary" title="Associate the annotation with the URL, not this particular tab" style="width:100%">Persist<input checked type="checkbox" id="persist" style="vertical-align:bottom" name="persist"/ ></button></td>
+		</tr>
+	</table>
 	<script src="popup.js"></script>
 </body>
 </html>
