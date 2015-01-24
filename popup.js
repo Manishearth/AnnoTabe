@@ -15,17 +15,14 @@ function loadStuff(){
 }
 function setStuffLambda(callback){
   return function(){
-    if(document.getElementById('annotext').value.trim()==""){
-      return;
-    }
   var tabobj={};
   if(persist){
-   tabobj['url-'+tabURL]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value}
+   tabobj['url-'+tabURL]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value.trim()}
   }else{
-   tabobj['tab-'+tabid]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value}
+   tabobj['tab-'+tabid]={URL:tabURL,title:tabTitle,value:document.getElementById('annotext').value.trim()}
   }
 
-  chrome.storage.sync.set(tabobj, callback);    
+  chrome.storage.sync.set(tabobj, callback);
 }
 }
 function getStuff(){
